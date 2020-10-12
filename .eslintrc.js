@@ -20,6 +20,7 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-one-expression-per-line': 0,
     'react/react-in-jsx-scope': 0,
+    'jsx-a11y/anchor-is-valid': 0,
     'import/extensions': [
       'error',
       'ignorePackages',

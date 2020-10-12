@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import PostType from '../lib/types/post';
 import * as postsService from '../lib/posts';
@@ -18,9 +19,13 @@ export default function Home({ posts }: { posts: Array<PostType> }) {
         <hr />
         {posts.map((post) => (
           <div key={post.slug}>
-            <h3>{post.data.title}</h3>
-            <span>post.data.date</span>
-            <span>post.data.author.name</span>
+            <h3>
+              <Link href={`/posts/${post.slug}`}>
+                <a>{post.data.title}</a>
+              </Link>
+            </h3>
+            <span>{post.data.date}</span>
+            <span>{post.data.author.name}</span>
             <p>{post.data.excerpt}</p>
           </div>
         ))}

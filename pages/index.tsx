@@ -2,11 +2,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import PostType from '../lib/types/post';
+import Layout from '../components/Layout';
 import * as postsService from '../lib/posts';
 
 export default function Home({ posts }: { posts: Array<PostType> }) {
   return (
     <div>
+      <Layout />
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

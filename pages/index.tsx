@@ -1,8 +1,9 @@
 import Head from 'next/head';
 
+import PostType from '../lib/types/post';
 import * as postsService from '../lib/posts';
 
-export default function Home() {
+export default function Home({ posts }: { posts: Array<PostType> }) {
   return (
     <div>
       <Head>
@@ -13,7 +14,16 @@ export default function Home() {
       <main>
         <h1>Title</h1>
 
-        <p>sample content...</p>
+        <h2>Content</h2>
+        <hr />
+        {posts.map((post) => (
+          <div key={post.slug}>
+            <h3>{post.data.title}</h3>
+            <span>post.data.date</span>
+            <span>post.data.author.name</span>
+            <p>{post.data.excerpt}</p>
+          </div>
+        ))}
       </main>
 
       <footer>footer...</footer>
@@ -21,10 +31,12 @@ export default function Home() {
   );
 }
 
-export function getStaticProps() {
-  const posts = postsService.getAllPosts({ limit: 10 });
+export async function getStaticProps() {
+  const posts = await postsService.getAllPosts({ limit: 10 });
 
   return {
-    props: { posts },
+    props: {
+      posts,
+    },
   };
 }

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as postsService from '../../lib/posts';
 import PostType from '../../lib/types/post';
 
@@ -6,10 +7,19 @@ interface PropTypes {
 }
 
 const Post = ({ post }: PropTypes) => (
-  <div>
-    <h1>{post.data.title}</h1>
+  <div className="container mx-auto">
+    <div className=" text-center font-black text-3xl m-12">
+      <h1>{post.data.title}</h1>
+    </div>
     <span>slug: {post.slug}</span>
     <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    <div className="hover:underline my-4">
+      <h2>
+        <Link href="/">
+          <a>Back to home</a>
+        </Link>
+      </h2>
+    </div>
   </div>
 );
 

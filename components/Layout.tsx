@@ -7,12 +7,7 @@ interface PropTypes {
 
 const Layout = ({ children }: PropTypes) => (
   <>
-    <header className="bg-indigo-800">
-      <div className="container mx-auto">
-        <NavBar />
-        Imagen de lambda renegades...
-      </div>
-    </header>
+    <NavBar />
     <main className="container mx-auto py-4">{children}</main>
   </>
 );

@@ -1,27 +1,23 @@
+import Image from 'next/image';
+
 const NavBar = () => (
   <>
-    <header className="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
+    <header className="bg-black border-b md:flex md:items-center md:justify-between px-16 shadow-lg md:py-3">
       <div className="flex items-center justify-between mb-4 md:mb-0">
-        <h1 className="leading-none text-2xl text-grey-darkest">
-          <a
-            className="no-underline text-grey-darkest hover:text-black"
-            href="#"
-          >
-            Lambda Renegades
-          </a>
-        </h1>
-
-        <a className="text-black hover:text-orange md:hidden" href="#">
-          <i className="fa fa-2x fa-bars" />
-        </a>
+        <Image
+          src="/logo.png"
+          alt="Lambda Renegades Logo"
+          width={50}
+          height={50}
+        />
       </div>
       {/* end Logo */}
 
       <nav>
-        <ul className="list-reset md:flex md:items-center">
+        <ul className="list-reset md:flex md:items-center text-white text-2xl">
           <li className="md:ml-4">
             <a
-              className="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
+              className="block no-underline hover:underline py-2 black md:border-none md:p-0"
               href="#"
             >
               Posts
@@ -29,7 +25,7 @@ const NavBar = () => (
           </li>
           <li className="md:ml-4">
             <a
-              className="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
+              className="border-t block no-underline hover:underline py-2 md:border-none md:p-0"
               href="#"
             >
               About
@@ -37,7 +33,7 @@ const NavBar = () => (
           </li>
           <li className="md:ml-4">
             <a
-              className="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
+              className="border-t block no-underline hover:underline py-2 md:border-none md:p-0"
               href="#"
             >
               Contact
